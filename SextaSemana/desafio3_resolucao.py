@@ -19,13 +19,13 @@ def exibir_cardapio():
     return cardapio
 
 # Criação da função receber_pedido()
-def receber_pedido():
+def receber_pedido(cardapio):
     pedido = []
     while True:
         sabor = input("Digite o sabor da pizza (ou sair para finalizar)")
         if sabor == "sair":
             break
-        elif sabor in exibir_cardapio():
+        elif sabor in cardapio:
             pedido.append(sabor)
             print(f"🍕 {sabor} adicionado ao pedido!")
         else:
@@ -33,13 +33,24 @@ def receber_pedido():
     return pedido
 
 # Criação da função calcular_total()
-def calcular_total():
+def calcular_total(pedido, cardapio):
     total = 0
     for pizza in pedido:
-        total += exibir_cardapio()
+        total += cardapio[pizza]
     return total
 
+# Criação da função main()
+def main():
+    cardapio = exibir_cardapio()
+    pedido = receber_pedido(cardapio)
+    total = calcular_total(pedido, cardapio)
 
-exibir_cardapio() # Invocar (chamar)
-receber_pedido()
-calcular_total()
+    print("🛒 Resumo do pedido")
+    for pizza in pedido:
+        print(f" 💰 {pizza} - R$ {cardapio[pizza]:.2f}")
+    print(f" 💵 Total a pagar: R$ {total:.2f} ")
+
+# Executar o programa
+main()
+
+
