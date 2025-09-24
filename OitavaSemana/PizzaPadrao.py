@@ -1,3 +1,4 @@
+# Classe pai - superclass()
 class PizzaPadrao:
     def __init__(self, sabor, tamanho, preco, ingredientes):
         self.sabor = sabor
@@ -17,6 +18,6 @@ class PizzaPadrao:
 pizza_calabresa = PizzaPadrao("Calabresa", "Pequeno", 50.00, "Tomate, oregano")
 pizza_marguerita = PizzaPadrao("Marguerita", "Médio", 55.00, "Tomate, oregano, queijo")
 
-pizza_calabresa.mostrar_detalhes()
-pizza_marguerita.mostrar_detalhes()
+# pizza_calabresa.mostrar_detalhes()
+# pizza_marguerita.mostrar_detalhes()
 
